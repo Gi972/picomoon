@@ -1,7 +1,7 @@
-Picomoon
+:crescent_moon: Picomoon
 --
 
-Compile moonscript to .p8 carts and reload on-the-fly!
+Compile [moonscript](http://moonscript.org/) to .p8 carts and reload on-the-fly!
 
 ![demo](screenshots/demo.gif)
 
