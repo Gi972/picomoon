@@ -34,12 +34,12 @@ module.exports = cli => filepath => {
     return console.error(err.message)
   }
   // write
-  if (cli.print) fs.writeFileSync(
+  if (cli.print) console.log(cart.replace(prevLua, nextLua))
+  else fs.writeFileSync(
     cartPath,
     cart.replace(prevLua, nextLua),
     'utf8'
   )
-  else console.log(cart.replace(prevLua, nextLua))
   console.log('...saved!')
   return true
 }
