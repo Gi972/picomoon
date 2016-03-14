@@ -1,0 +1,16 @@
+{
+  "name": "picomoon",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Josiah Savary <hello@jsavary.com> (http://jsavary.com)",
+  "license": "ISC",
+  "dependencies": {
+    "chokidar": "1.4.3",
+    "commander": "2.9.0",
+    "glob": "7.0.3"
+  }
+}
