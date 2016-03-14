@@ -1,3 +1,18 @@
+Picomoon
+--
+
+Compile moonscript to .p8 carts and reload on-the-fly!
+
+![demo](screenshots/demo.gif)
+
+Installation
+--
+
+    npm i -g picomoon
+
+Usage
+--
+
     Usage: picomoon [options] <file ...>
     
     Options:
