@@ -1,6 +1,6 @@
 {
   "name": "picomoon",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Compile moonscript to PICO-8 cartridges",
   "main": "index.js",
   "bin": {
@@ -10,6 +10,10 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Josiah Savary <hello@jsavary.com> (http://jsavary.com)",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jozanza/picomoon"
+  },
   "license": "ISC",
   "dependencies": {
     "chokidar": "1.4.3",
