@@ -1,6 +1,6 @@
 {
   "name": "picomoon",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "Compile .lua/.js/.moon to .p8",
   "main": "index.js",
   "bin": {
