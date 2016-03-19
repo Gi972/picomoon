@@ -132,26 +132,18 @@ _tonum = function(x)
   return 0 + x
 end
 _tostr = function(x)
-  return '' .. x
+  if type(x) == 'table' and x.tostring then
+    return x:tostring()
+  end
+  return x and '' .. x or ''
 end
 _eq = function(x, y)
   return x == y
 end
 _add = function(x, y)
-  -- coercing objects (mostly arrays) to string
-  if (type(x) == 'table' or type(y) == 'table') and (type(x) == 'string' or type(y) == 'string') then
-    local _x, _y = x, y
-    if (type(_x) == 'table') then
-      _x = _x:tostring()
-    end
-    if (type(_y) == 'table') then
-      _y = _y:tostring()
-    end
-    return x .. y
-  end
   -- concatenation
   if type(x) == 'string' or type(y) == 'string' then
-    return _tostr(x) .. y
+    return _tostr(x) .. _tostr(y)
   -- addition
   else
     return x + y
@@ -219,11 +211,23 @@ end
 -- global objects
 infinity = 32767 -- highest number in pico-8
 console = {
-  log = function(_, ...) print(...) end;
-  info = function(_, ...) print(...) end;
-  warn = function(_, ...) print(...) end;
-  error = function(_, ...) print(...) end;
-  debug = function(_, ...) printh(...) end;
+  log = function(_, ...)
+    local str = ''
+    for k,v in pairs({...}) do
+      str = _add(str, v) .. ' '
+    end
+    print(sub(str, 1, #str-1))
+  end;
+  info = function(_, ...) _:log(...) end;
+  warn = function(_, ...) _:log(...) end;
+  error = function(_, ...) _:log(...) end;
+  debug = function(_, ...)
+    local str = ''
+    for k,v in pairs({...}) do
+      str = _add(str, v)
+    end
+    printh(sub(str, 1, #str-1))
+  end;
 }
 -- todo: falsey values
 -- null = nil
@@ -334,14 +338,16 @@ array = {}
 array_prototype = {
   length = 0;
   constructor=function(x, count)
-    x.length = length
     for k,v in pairs(array_prototype) do
       x[k] = v
+    end
+    if (count) then
+      x.length = count
     end
     return x
   end;
   tostring=function(this)
-    return this:join(this)
+    return this:join()
   end;
   push=function(this, ...)
     local args = {...}
@@ -498,7 +504,7 @@ array_prototype = {
         ret = _add(ret, this[i])
       end
       if i ~= this.length - 1 then
-        ret = ret .. delim
+        ret = _add(ret, delim or ',')
       end
     end
     return ret
@@ -543,9 +549,9 @@ array_prototype = {
       end
     end
     local v = ret[1]
-    del(ret,1)
-    this[0] = v
-    return _arr(ret, count)
+    del(ret, v)
+    ret[0] = v
+    return _arr(ret, #ret + 1)
   end;
   filter=function(this, f, ctx)
     local ret, count = {}, 0
@@ -556,9 +562,9 @@ array_prototype = {
       end
     end
     local v = ret[1]
-    del(ret,1)
-    this[0] = v
-    return _arr(ret, count)
+    del(ret,v)
+    ret[0] = v
+    return _arr(ret, #ret + 1)
   end;
   reduce=function(this, f, init)
     if this.length == 0 and init == nil then
@@ -611,6 +617,3 @@ array_prototype = {
 }
 `
 }
-
-
-
