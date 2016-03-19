@@ -30,7 +30,7 @@ Usage
 
     -h, --help             output usage information
     -V, --version          output the version number
-    -l, --language [name]  Input file language. default to "moonscript"
+    -l, --language [name]  Input file language. defaults to "lua"
     -x, --root [path]      Path to pico-8 carts. defaults to "~/Library/Application Support/pico-8/carts"
     -o, --output [file]    Write output to file
     -p, --print            Write output to std out
