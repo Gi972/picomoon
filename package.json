@@ -1,7 +1,7 @@
 {
   "name": "picomoon",
-  "version": "0.0.4",
-  "description": "Compile moonscript to PICO-8 cartridges",
+  "version": "0.0.5",
+  "description": "Compile .lua/.js/.moon -> .p8",
   "main": "index.js",
   "bin": {
     "picomoon": "index.js"
