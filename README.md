@@ -50,7 +50,7 @@ Compile a .lua file to a .p8 cart with a different name:
 
 Compile a .moon file to a .p8 cart:
 
-    picomoon -l moonscript my_cart.lua
+    picomoon -l moonscript my_cart.moon
 
 Compile and watch a .js file for changes and auto-reload the compiled cart in pico-8:
     
@@ -58,6 +58,6 @@ Compile and watch a .js file for changes and auto-reload the compiled cart in pi
 
 Compile and print output to stdout:
 
-    picomoon -p my_cart.js
+    picomoon -p my_cart.lua
 
 
