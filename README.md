@@ -1,7 +1,7 @@
 :crescent_moon: Picomoon
 --
 
-Compile Lua, Javascript, or [Moonscript](http://moonscript.org/) to .p8 carts on-the-fly!
+Compile Lua, Javascript, or [MoonScript](http://moonscript.org/) to .p8 carts on-the-fly!
 
 ![demo](screenshots/demo.gif)
 
@@ -16,7 +16,7 @@ Dependencies
 
 You'll need some binaries available in your `$PATH` if you want to compile from languages other than Lua:
 
-**Moonscript**: [moonc](http://moonscript.org/)
+**MoonScript**: [moonc](http://moonscript.org/#installation)
 
 **Javascript**: [castl](https://github.com/PaulBernier/castl)
 
