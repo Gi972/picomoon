@@ -1,3 +1,5 @@
+> **NOTE:** This project is no longer being developed. Check out [p8](https://github.com/jozanza/p8/) instead! :)
+
 :crescent_moon: Picomoon
 --
 
